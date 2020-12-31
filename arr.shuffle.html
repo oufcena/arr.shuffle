@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>arr.shuffle()</h1>
+
+<script>
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+Array.prototype.shuffle = function () {
+  let input = this;
+
+  for(let i=input.length-1; i>=0; i--) {
+    let random = Math.floor(Math.random() * (i+1));
+    let index = input[random];
+    input[random] = input[i];
+    input[i] = index;
+  }
+  return input;
+}
+
+document.body.innerHTML += arr.shuffle();	
+</script>
+
+</body>
+</html>
+
+
